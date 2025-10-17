@@ -1,69 +1,59 @@
-import React from 'react';
-import { Box, Typography, TextField, Button, Paper } from '@mui/material';
+import React, { useState } from "react";
+import "../styles/LoginPage.css";
+import logoFCA from "../assets/logos/logoFCA_Color.png";
 
-const Login = () => {
+const LoginForm = () => {
+  const [rfc, setRfc] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("RFC:", rfc);
+    console.log("Contraseña:", password);
+  };
+
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      height="100vh"
-      sx={{
-        background: 'linear-gradient(135deg, #0d47a1, #1976d2)', // tu fondo o color actual
-        color: 'white',
-      }}
-    >
-      {/* Logo y nombre */}
-      <Box textAlign="center" sx={{ mt: -8, mb: 3 }}>
-        <img
-          src="/logo.png"
-          alt="Logo"
-          style={{ width: 100, height: 'auto' }}
-        />
-        <Typography variant="h5" sx={{ mt: 1, fontWeight: 'bold' }}>
-          Nombre de tu sitio
-        </Typography>
-      </Box>
+    <div className="login-form">
+      <img src={logoFCA} alt="Logo FCA" className="login-logo" />
 
-      {/* Texto Bienvenido */}
-      <Typography variant="h6" sx={{ mb: 3 }}>
-        Bienvenido
-      </Typography>
+      <h2>
+        Facultad de Contaduría <br /> y Administración
+      </h2>
 
-      {/* Formulario dentro de una caja */}
-      <Paper
-        elevation={6}
-        sx={{
-          p: 4,
-          width: 320,
-          borderRadius: 3,
-          textAlign: 'center',
-          backgroundColor: 'rgba(255, 255, 255, 0.9)', // Blanco con transparencia
-          color: '#000',
-        }}
-      >
-        <TextField
-          label="Usuario"
-          fullWidth
-          sx={{ mb: 2 }}
+      <h3 className="login-title">BIENVENIDO DE NUEVO!</h3>
+
+      <form onSubmit={handleSubmit}>
+        <label>RFC</label>
+        <input
+          type="text"
+          placeholder="Introduce tu RFC"
+          value={rfc}
+          onChange={(e) => setRfc(e.target.value)}
         />
-        <TextField
-          label="Contraseña"
+
+        <label>Contraseña</label>
+        <input
           type="password"
-          fullWidth
-          sx={{ mb: 2 }}
+          placeholder="********"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <Button
-          variant="contained"
-          color="primary"
-          fullWidth
-        >
-          Ingresar
-        </Button>
-      </Paper>
-    </Box>
+
+        <div className="login-options">
+          <label>
+            <input type="checkbox" /> Recuérdame
+          </label>
+          <a href="#" className="forgot-password">
+            Olvidé contraseña
+          </a>
+        </div>
+
+        <button type="submit" className="login-btn">
+          Acceder
+        </button>
+      </form>
+    </div>
   );
 };
 
-export default Login;
+export default LoginForm;
