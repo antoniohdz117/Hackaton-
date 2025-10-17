@@ -1,6 +1,8 @@
 import React from "react";
 import "../../styles/components/ReservationTable.css";
 
+
+//DATOS DE PRUEBA
 const reservations = [
   {
     id: 1,
@@ -37,6 +39,11 @@ const reservations = [
   },
 ];
 
+
+//TABLA QEUE MUESTRA LAS RESERVACIONES
+
+
+//SE DEBE INTEGRAR UNA TABLA CON FILTROS CON MATERIAL UI CONTEMPLANDO LAS COLUMNAS DE ARRIBA
 const ReservationTable = () => {
   return (
     <div className="table-container">
