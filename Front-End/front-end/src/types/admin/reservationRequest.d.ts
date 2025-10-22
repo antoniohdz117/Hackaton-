@@ -24,3 +24,8 @@ export interface reservacionEstatus {
 export interface reservacionArea {
     nombreArea: string;
 }
+
+/*tabla categoria*/
+export interface reservacionCateoria {
+    nombreCategoria: string;
+}
