@@ -8,13 +8,17 @@ import {
   Checkbox,
   FormControlLabel,
 } from "@mui/material";
-import fcaBg from "../assets/images/02.jpg";
-import logoFCA from "../assets/logos/logoFCA_Color.png";
+
+
+//importar imagenes y logos
+
+import fcaBg from "../../assets/images/02.jpg";
+import logoFCA from "../../assets/logos/logoFCA_Color.png";
 
 const LoginPage = () => {
   return (
     <Box sx={{ display: "flex", height: "100vh", overflow: "hidden" }}>
-      {/* ===== Imagen izquierda ===== */}
+      {/*  Imagen izquierda  */}
       <Box
         sx={{
           flex: 1.2,
@@ -30,7 +34,7 @@ const LoginPage = () => {
             position: "absolute",
             top: 0,
             left: 0,
-            width: "120%", // ✅ cubre más del 100%
+            width: "120%", // 
             height: "100%",
             objectFit: "cover",
             objectPosition: "center",
@@ -38,7 +42,7 @@ const LoginPage = () => {
         />
       </Box>
 
-      {/* ===== Formulario derecha ===== */}
+      {/* Formulario derecha */}
       <Box
         sx={{
           flex: 1,
@@ -69,7 +73,7 @@ const LoginPage = () => {
                 width: 100,
                 height: "auto",
                 mb: 1,
-                mt: -1, // 🔹 sube el logo
+                mt: -1, // Ajuste vertical
               }}
             />
             <Typography
