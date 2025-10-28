@@ -16,16 +16,20 @@ const AppRoutes = () => {
 
   return (
     <Routes>
+
       {/* inicio de sesión */}
       <Route path="/login" element={<LoginPage />} />
 
-      {/*administrador */}
-
-      
+      {/*administrador */}      
       <Route path="/admin/dashboard" element={<DashboardPage />} />
 
+      {/*administrador */}      
+      <Route path="/solicitante/dashboard" element={<DashboardPage />} />
 
-      {/* Redirección por defecto */}
+      {/*user */}      
+      <Route path="/user/dashboard" element={<DashboardPage />} />
+
+      {/* Redirección por defetco   */}
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );
