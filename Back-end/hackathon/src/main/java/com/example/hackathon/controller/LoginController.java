@@ -49,6 +49,7 @@ public class LoginController {
         boolean ok = loginService.validarCredenciales(request.getRfc(), request.getContrasenia());
 
         if (ok) {
+            //Se deben regresar los campos de los datos del usuario autenficado
             return ResponseEntity.ok(new LoginResponse(true, "Login exitoso"));
         } else {
             return ResponseEntity.status(401).body(new LoginResponse(false, "Credenciales inválidas"));
