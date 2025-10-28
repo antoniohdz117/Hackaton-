@@ -1,4 +1,5 @@
 export interface Login {
+
   rfc: string;
   contraseña: String;
 }
@@ -13,4 +14,5 @@ export interface LoginResponse {
   materno: string;
   correo: string;
   telefono: string;
+
 }
