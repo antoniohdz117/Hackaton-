@@ -10,10 +10,24 @@ import {
 } from "@mui/material";
 
 
+//importar imagen de visibilidad
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+
 //importar imagenes y logos
 
-import fcaBg from "../../assets/images/02.jpg";
+import imagenAuditorio from "../../assets/images/02.jpg";
 import logoFCA from "../../assets/logos/logoFCA_Color.png";
+
+//CONEXION CON BACKEND PARA AUTENTIFICACION
+
+import axios from "axios";
+import { useState } from "react";
+//import autentificacion from "../../api/authService";
+
+
+//IMPORTAR API DE AUTENTIFICACION
+import authService from "../../api/authService";
 
 const LoginPage = () => {
   return (
@@ -28,7 +42,7 @@ const LoginPage = () => {
       >
         <Box
           component="img"
-          src={fcaBg}
+          src={imagenAuditorio}
           alt="FCA"
           sx={{
             position: "absolute",
@@ -52,7 +66,7 @@ const LoginPage = () => {
           backgroundColor: "#f7f7f7",
         }}
       >
-        {/* Caja (Paper) */}
+        
         <Paper
           elevation={8}
           sx={{
@@ -73,7 +87,7 @@ const LoginPage = () => {
                 width: 100,
                 height: "auto",
                 mb: 1,
-                mt: -1, // Ajuste vertical
+                mt: -1, // Ajuste 
               }}
             />
             <Typography
@@ -111,6 +125,8 @@ const LoginPage = () => {
               variant="outlined"
               fullWidth
               sx={{ mb: 1 }}
+              //agregar icono de visibilidad
+              
             />
 
             {/* Opciones */}
