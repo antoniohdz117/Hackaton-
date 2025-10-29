@@ -1,4 +1,6 @@
 -- Inserción de datos de prueba
+
+-- Padres
 INSERT INTO sede
 VALUES
     (1, 'Licenciatura'),
@@ -37,151 +39,31 @@ VALUES
     (4, 'Doctor'),
     (5, 'Especialista');
 
-INSERT INTO puesto
-VALUES
-    (1, 'Presidente de APAFCA'),
-    (2, 'Encargada de Requisitos de Titulacion'),
-    (3, 'Jefe del Departamento de Administracion Escolar'),
-    (4, 'Oficial de Servicios Administrativos'),
-    (5, 'Oficinista de Servicios Escolares'),
-    (6, 'Responsable de Informatica'),
-    (7, 'Responsable de Modalidad Abierta'),
-    (8, 'Secretaria'),
-    (9, 'Apoyo Secretarial'),
-    (10, 'Apoyo a la Coordinacion de Formacion Docente, Titulacion y Extension'),
-    (11, 'Apoyo al Centro de Educacion a Distancia'),
-    (12, 'Asesoria Pedagogica y Diseno Instruccional'),
-    (13, 'Asistente de Plataformas: Programas Formales y Extension'),
-    (14, 'Jefatura'),
-    (15, 'Responsable Administrativo'),
-    (16, 'Responsable de Multimedios'),
-    (17, 'Responsable de Proyectos Educativos'),
-    (18, 'Responsable de Proyectos Especiales'),
-    (19, 'Responsable de Elaboracion de Material Didactico'),
-    (20, 'Responsable de Plataformas: Cursos en Linea Institucionales'),
-    (21, 'Apoyo a Administracion de Servidores'),
-    (22, 'Apoyo a Laboratorios de Computo'),
-    (23, 'Atencion en Ventanillas'),
-    (24, 'Coordinador de Administracion de Servidores'),
-    (25, 'Coordinador de Aplicaciones'),
-    (26, 'Coordinador de Infraestructura'),
-    (27, 'Coordinador de Soporte Tecnico'),
-    (28, 'Coordinador de Telecomunicaciones'),
-    (29, 'Coordinadora UX/UI'),
-    (30, 'Coordinadora de Capacitacion Especializada en TIC (CETIC) y Laboratorios de Computo'),
-    (31, 'Coordinadora de Desarrollo de Sitios Web'),
-    (32, 'Jefa del Centro de Informatica'),
-    (33, 'Responsable de Administracion de Servidores'),
-    (34, 'Responsable de Telecomunicaciones'),
-    (35, 'Responsable de Soporte Tecnico'),
-    (36, 'Coordinador de Asuntos Internacionales'),
-    (37, 'Coordinador de Auditoria'),
-    (38, 'Coordinadora de Contabilidad Avanzada'),
-    (39, 'Coordinador de Contabilidad Basica'),
-    (40, 'Coordinadora de Derecho'),
-    (41, 'Coordinadora de Finanzas'),
-    (42, 'Jefe de la Licenciatura en Administracion'),
-    (43, 'Jefa de la Licenciatura en Contaduria'),
-    (44, 'Jefe de la Licenciatura en Informatica'),
-    (45, 'Jefe de la Licenciatura en Negocios Internacionales'),
-    (46, 'Coordinadora de Fiscal'),
-    (47, 'Coordinador de Informatica'),
-    (48, 'Coordinadora de Matematicas'),
-    (49, 'Coordinadora de Mercadotecnia'),
-    (50, 'Coordinadora de Metodologia de la Investigacion y Etica'),
-    (51, 'Coordinadora de Operaciones y Adquisiciones'),
-    (52, 'Coordinadora de Recursos Humanos');
-
 INSERT INTO rol
 VALUES
     (1, 'Administrador'),
     (2, 'Funcionario'),
     (3, 'Servicio Social');
 
-INSERT INTO recinto
+INSERT INTO area
 VALUES
-    (1, 'Aula Magna de Profesores Emeritos',
-     'Edificio Principal, planta baja, junto al auditorio de la FCA',
-     120,
-     '1 proyector, 4 bocinas de audio, 1 laptop, 2 microfonos inalambricos',
-     'https://www.fca.unam.mx/ubicaciones/aula_magna_profesores_emeritos',
-     1),
+    (1, 'Licenciatura en Contaduria'),
+    (2, 'Licenciatura en Administracion'),
+    (3, 'Licenciatura en Informatica'),
+    (4, 'Licenciatura en Negocios Internacionales'),
+    (5, 'Area de Fiscal'),
+    (6, 'Area de Metodologia de la Investigacion y Etica'),
+    (7, 'Area de Operaciones y Adquisiciones'),
+    (8, 'Area de Recursos Humanos'),
+    (9, 'Area de Finanzas'),
+    (10, 'Publicaciones y Fomento Editorial'),
+    (11, 'Centro de Innovacion y Formacion en Contaduria y Administracion (CIFCA)'),
+    (12, 'Secretaria Administrativa'),
+    (13, 'Centro de Informatica'),
+    (14, 'Departamento de Medios Audiovisuales'),
+    (15, 'Departamento de Actos Academicos');
 
-    (2, 'C.P. Alfonso Ochoa Ravize',
-     'Edificio B, segundo piso, ala poniente',
-     80,
-     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
-     'https://www.fca.unam.mx/ubicaciones/alfonso_ochoa_ravize',
-     1),
-
-    (3, 'Fronton Cerrado',
-     'Zona deportiva FCA, detras del Edificio D',
-     200,
-     'Sistema de audio ambiental, microfonos, proyector portatil',
-     'https://www.fca.unam.mx/ubicaciones/fronton_cerrado',
-     1),
-
-    (4, 'Maestro Carlos Perez del Toro',
-     'Edificio C, planta alta, salon 204',
-     90,
-     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
-     'https://www.fca.unam.mx/ubicaciones/carlos_perez_del_toro',
-     1),
-
-    (5, 'Maestro Jose Antonio Echenique Garcia',
-     'Edificio D, planta baja, junto al estacionamiento interno',
-     150,
-     '1 proyector, 2 bocinas de audio, 1 laptop, 1 amplificador de audio, 2 microfonos',
-     'https://www.fca.unam.mx/ubicaciones/echenique_garcia',
-     1),
-
-    (6, 'Zoom',
-     'Plataforma virtual institucional de la FCA',
-     300,
-     'Aula virtual con soporte para videoconferencias, microfonos y grabacion de sesiones',
-     'https://www.fca.unam.mx/aulas_virtuales/zoom',
-     1),
-
-    (7, 'Aula I Metodo de Caso',
-     'Edificio de Posgrado, primer nivel, aula 1',
-     60,
-     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
-     'https://www.fca.unam.mx/posgrado/aula1_metodo_de_caso',
-     2),
-
-    (8, 'Aula II Metodo de Caso',
-     'Edificio de Posgrado, primer nivel, aula 2',
-     60,
-     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
-     'https://www.fca.unam.mx/posgrado/aula2_metodo_de_caso',
-     2),
-
-    (9, 'Aula III Metodo de Caso',
-     'Edificio de Posgrado, primer nivel, aula 3',
-     60,
-     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
-     'https://www.fca.unam.mx/posgrado/aula3_metodo_de_caso',
-     2),
-
-    (10, 'Aula IV Metodo de Caso',
-     'Edificio de Posgrado, primer nivel, aula 4',
-     60,
-     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
-     'https://www.fca.unam.mx/posgrado/aula4_metodo_de_caso',
-     2),
-    (11, 'Aula Magna de Investigacion',
-     'Edificio de Posgrado, planta alta, aula principal',
-     140,
-     '1 proyector, sistema de audio, 2 microfonos, laptop institucional',
-     'https://www.fca.unam.mx/posgrado/aula_magna_investigacion',
-     2),
-    (12, 'C.P. Arturo Elizundia Charles',
-     'Edificio de Posgrado, planta baja, aula especial',
-     100,
-     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
-     'https://www.fca.unam.mx/posgrado/arturo_elizundia_charles',
-     2);
-
+-- Padres-Hijas
 INSERT INTO usuario
 VALUES
     (1, 'Silvia Berenice', 'Villamil', 'Rodriguez', '5550000001', '5551000001',
@@ -223,23 +105,93 @@ VALUES
     (19, 'Elena', 'Rivera', 'Martinez', '5550000019', '5551000019',
      'eriveram@fca.unam.mx', 'Rivera2025', 2);
 
-INSERT INTO area
+INSERT INTO recinto
 VALUES
-    (1, 'Licenciatura en Contaduria', 2),
-    (2, 'Licenciatura en Administracion', 1),
-    (3, 'Licenciatura en Informatica', 3),
-    (4, 'Licenciatura en Negocios Internacionales', 4),
-    (5, 'Area de Fiscal', 5),
-    (6, 'Area de Metodologia de la Investigacion y Etica', 6),
-    (7, 'Area de Operaciones y Adquisiciones', 7),
-    (8, 'Area de Recursos Humanos', 8),
-    (9, 'Area de Finanzas', 9),
-    (10, 'Publicaciones y Fomento Editorial', 14),
-    (11, 'Centro de Innovacion y Formacion en Contaduria y Administracion (CIFCA)', 15),
-    (12, 'Secretaria Administrativa', 16),
-    (13, 'Centro de Informatica', 17),
-    (14, 'Departamento de Medios Audiovisuales', 18),
-    (15, 'Departamento de Actos Academicos', 19);
+    (1, 'Aula Magna de Profesores Emeritos',
+     'Edificio Principal, planta baja, junto al auditorio de la FCA',
+     120,
+     '1 proyector, 4 bocinas de audio, 1 laptop, 2 microfonos inalambricos',
+     'https://www.fca.unam.mx/ubicaciones/aula_magna_profesores_emeritos',
+     1),
+    (2, 'C.P. Alfonso Ochoa Ravize',
+     'Edificio B, segundo piso, ala poniente',
+     80,
+     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
+     'https://www.fca.unam.mx/ubicaciones/alfonso_ochoa_ravize',
+     1),
+    (3, 'Fronton Cerrado',
+     'Zona deportiva FCA, detras del Edificio D',
+     200,
+     'Sistema de audio ambiental, microfonos, proyector portatil',
+     'https://www.fca.unam.mx/ubicaciones/fronton_cerrado',
+     1),
+    (4, 'Maestro Carlos Perez del Toro',
+     'Edificio C, planta alta, salon 204',
+     90,
+     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
+     'https://www.fca.unam.mx/ubicaciones/carlos_perez_del_toro',
+     1),
+    (5, 'Maestro Jose Antonio Echenique Garcia',
+     'Edificio D, planta baja, junto al estacionamiento interno',
+     150,
+     '1 proyector, 2 bocinas de audio, 1 laptop, 1 amplificador de audio, 2 microfonos',
+     'https://www.fca.unam.mx/ubicaciones/echenique_garcia',
+     1),
+    (6, 'Zoom',
+     'Plataforma virtual institucional de la FCA',
+     300,
+     'Aula virtual con soporte para videoconferencias, microfonos y grabacion de sesiones',
+     'https://www.fca.unam.mx/aulas_virtuales/zoom',
+     1),
+    (7, 'Aula I Metodo de Caso',
+     'Edificio de Posgrado, primer nivel, aula 1',
+     60,
+     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
+     'https://www.fca.unam.mx/posgrado/aula1_metodo_de_caso',
+     2),
+    (8, 'Aula II Metodo de Caso',
+     'Edificio de Posgrado, primer nivel, aula 2',
+     60,
+     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
+     'https://www.fca.unam.mx/posgrado/aula2_metodo_de_caso',
+     2),
+    (9, 'Aula III Metodo de Caso',
+     'Edificio de Posgrado, primer nivel, aula 3',
+     60,
+     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
+     'https://www.fca.unam.mx/posgrado/aula3_metodo_de_caso',
+     2),
+    (10, 'Aula IV Metodo de Caso',
+     'Edificio de Posgrado, primer nivel, aula 4',
+     60,
+     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
+     'https://www.fca.unam.mx/posgrado/aula4_metodo_de_caso',
+     2),
+    (11, 'Aula Magna de Investigacion',
+     'Edificio de Posgrado, planta alta, aula principal',
+     140,
+     '1 proyector, sistema de audio, 2 microfonos, laptop institucional',
+     'https://www.fca.unam.mx/posgrado/aula_magna_investigacion',
+     2),
+    (12, 'C.P. Arturo Elizundia Charles',
+     'Edificio de Posgrado, planta baja, aula especial',
+     100,
+     '1 proyector, 2 bocinas, 1 laptop, 1 microfono',
+     'https://www.fca.unam.mx/posgrado/arturo_elizundia_charles',
+     2);
+
+INSERT INTO miembro
+VALUES
+    (1, 'Claudia', 'Ramirez', 'Lopez', 'https://fca.unam.mx/semblanzas/claudia-ramirez', 3, 3),
+    (2, 'Hector', 'Mendoza', 'Rios', 'https://fca.unam.mx/semblanzas/hector-mendoza', 4, 3),
+    (3, 'Patricia', 'Gomez', 'Cortes', 'https://fca.unam.mx/semblanzas/patricia-gomez', 3, 3),
+    (4, 'Luis', 'Fernandez', 'Torres', 'https://fca.unam.mx/semblanzas/luis-fernandez', 3, 4),
+    (5, 'Alejandra', 'Morales', 'Diaz', 'https://fca.unam.mx/semblanzas/alejandra-morales', 3, 4),
+    (6, 'Jorge', 'Castillo', 'Perez', NULL, 2, 2),
+    (7, 'Veronica', 'Lozano', 'Campos', NULL, 3, 2),
+    (8, 'Rafael', 'Garcia', 'Nunez', NULL, 4, 1),
+    (9, 'Mariana', 'Gutierrez', 'Flores', NULL, 1, 1),
+    (10, 'Carlos', 'Santos', 'Delgado', 'https://fca.unam.mx/semblanzas/carlos-santos', 2, 4);
 
 INSERT INTO recursos
 VALUES
@@ -262,31 +214,73 @@ VALUES
     (17, 'Limpieza vestidores', 12),
     (18, 'Abrir auditorio', 12);
 
-INSERT INTO miembro
+-- Hijas
+INSERT INTO puesto
 VALUES
-    (1, 'Claudia', 'Ramirez', 'Lopez', 'https://fca.unam.mx/semblanzas/claudia-ramirez', 3, 3),
-    (2, 'Hector', 'Mendoza', 'Rios', 'https://fca.unam.mx/semblanzas/hector-mendoza', 4, 3),
-    (3, 'Patricia', 'Gomez', 'Cortes', 'https://fca.unam.mx/semblanzas/patricia-gomez', 3, 3),
-    (4, 'Luis', 'Fernandez', 'Torres', 'https://fca.unam.mx/semblanzas/luis-fernandez', 3, 4),
-    (5, 'Alejandra', 'Morales', 'Diaz', 'https://fca.unam.mx/semblanzas/alejandra-morales', 3, 4),
-    (6, 'Jorge', 'Castillo', 'Perez', NULL, 2, 2),
-    (7, 'Veronica', 'Lozano', 'Campos', NULL, 3, 2),
-    (8, 'Rafael', 'Garcia', 'Nunez', NULL, 4, 1),
-    (9, 'Mariana', 'Gutierrez', 'Flores', NULL, 1, 1),
-    (10, 'Carlos', 'Santos', 'Delgado', 'https://fca.unam.mx/semblanzas/carlos-santos', 2, 4);
+    (1, 'Presidente de APAFCA', 2),
+    (2, 'Encargada de Requisitos de Titulacion', 1),
+    (3, 'Jefe del Departamento de Administracion Escolar', 12),
+    (4, 'Oficial de Servicios Administrativos', 12),
+    (5, 'Oficinista de Servicios Escolares', 12),
+    (6, 'Responsable de Informatica', 13),
+    (7, 'Responsable de Modalidad Abierta', 13),
+    (8, 'Secretaria', 12),
+    (9, 'Apoyo Secretarial', 12),
+    (10, 'Apoyo a la Coordinacion de Formacion Docente, Titulacion y Extension', 11),
+    (11, 'Apoyo al Centro de Educacion a Distancia', 11),
+    (12, 'Asesoria Pedagogica y Diseno Instruccional', 11),
+    (13, 'Asistente de Plataformas: Programas Formales y Extension', 11),
+    (14, 'Jefatura', 11),
+    (15, 'Responsable Administrativo', 12),
+    (16, 'Responsable de Multimedios', 14),
+    (17, 'Responsable de Proyectos Educativos', 14),
+    (18, 'Responsable de Proyectos Especiales', 14),
+    (19, 'Responsable de Elaboracion de Material Didactico', 14),
+    (20, 'Responsable de Plataformas: Cursos en Linea Institucionales', 14),
+    (21, 'Apoyo a Administracion de Servidores', 13),
+    (22, 'Apoyo a Laboratorios de Computo', 13),
+    (23, 'Atencion en Ventanillas', 12),
+    (24, 'Coordinador de Administracion de Servidores', 13),
+    (25, 'Coordinador de Aplicaciones', 13),
+    (26, 'Coordinador de Infraestructura', 13),
+    (27, 'Coordinador de Soporte Tecnico', 13),
+    (28, 'Coordinador de Telecomunicaciones', 13),
+    (29, 'Coordinadora UX/UI', 13),
+    (30, 'Coordinadora de Capacitacion Especializada en TIC (CETIC) y Laboratorios de Computo', 13),
+    (31, 'Coordinadora de Desarrollo de Sitios Web', 13),
+    (32, 'Jefa del Centro de Informatica', 13),
+    (33, 'Responsable de Administracion de Servidores', 13),
+    (34, 'Responsable de Telecomunicaciones', 13),
+    (35, 'Responsable de Soporte Tecnico', 13),
+    (36, 'Coordinador de Asuntos Internacionales', 2),
+    (37, 'Coordinador de Auditoria', 1),
+    (38, 'Coordinadora de Contabilidad Avanzada', 1),
+    (39, 'Coordinador de Contabilidad Basica', 1),
+    (40, 'Coordinadora de Derecho', 2),
+    (41, 'Coordinadora de Finanzas', 9),
+    (42, 'Jefe de la Licenciatura en Administracion', 2),
+    (43, 'Jefa de la Licenciatura en Contaduria', 1),
+    (44, 'Jefe de la Licenciatura en Informatica', 3),
+    (45, 'Jefe de la Licenciatura en Negocios Internacionales', 4),
+    (46, 'Coordinadora de Fiscal', 5),
+    (47, 'Coordinador de Informatica', 13),
+    (48, 'Coordinadora de Matematicas', 6),
+    (49, 'Coordinadora de Mercadotecnia', 2),
+    (50, 'Coordinadora de Metodologia de la Investigacion y Etica', 6),
+    (51, 'Coordinadora de Operaciones y Adquisiciones', 7),
+    (52, 'Coordinadora de Recursos Humanos', 8);
 
-
-INSERT INTO academico (idUsuario, rfc, idPuesto, idArea)
+INSERT INTO academico (idUsuario, rfc, idPuesto)
 VALUES
-    (1, 'VILR890101ABC', 42, 2),
-    (2, 'AAGM810202BCD', 43, 1),
-    (3, 'GEGG830303CDE', 44, 3),
-    (4, 'HBAG850404DEF', 45, 4),
-    (8, 'GEGU890808HIJ', 41, 9),
-    (14, 'GAPZ910101JKL', 14, 10),
-    (15, 'AGVG920202KLM', 32, 13),
-    (18, 'ACMM950505NOP', 14, 14),
-    (19, 'ERMM960606OPQ', 14, 10);
+    (1, 'VILR890101ABC', 42),
+    (2, 'AAGM810202BCD', 43),
+    (3, 'GEGG830303CDE', 44),
+    (4, 'HBAG850404DEF', 45),
+    (8, 'GEGU890808HIJ', 41),
+    (14, 'GAPZ910101JKL', 14),
+    (15, 'AGVG920202KLM', 32),
+    (18, 'ACMM950505NOP', 16),
+    (19, 'ERMM960606OPQ', 10);
 
 INSERT INTO alumno
 VALUES
@@ -295,21 +289,19 @@ VALUES
     (12, '321456791'),
     (13, '321456792');
 
-
 INSERT INTO evento
 VALUES
-    (1, 'Semana academica', '2025-06-09 09:00:00', '2025-06-13 20:00:00', '2025-06-09', '2025-06-13', 8, NULL),
-
-    (2, 'Beneficiario controlador', '2025-06-09 09:40:00', '2025-06-09 11:00:00', '2025-06-09', '2025-06-09', 5, 1),
-    (3, 'La sustentabilidad en una empresa de produccion', '2025-06-09 11:00:00', '2025-06-09 13:00:00', '2025-06-09', '2025-06-09', 5, 1),
-    (4, 'Optimizacion de Costos con implantacion de la Filosofia Kaizen', '2025-06-09 09:00:00', '2025-06-09 11:00:00', '2025-06-09', '2025-06-09', 2, 1),
-    (5, 'Violencia y poder en el mundo de los negocios', '2025-06-09 16:00:00', '2025-06-09 18:00:00', '2025-06-09', '2025-06-09', 2, 1),
-    (6, 'El talento humano en la organizacion ante los retos de la Inteligencia Artificial', '2025-06-10 09:00:00', '2025-06-10 11:00:00', '2025-06-10', '2025-06-10', 2, 1),
-    (7, 'El CFDI como eje de la fiscalizacion del SAT', '2025-06-10 11:00:00', '2025-06-10 13:00:00', '2025-06-10', '2025-06-10', 7, 1),
-    (8, 'Normas Internacionales de Gestion de Calidad', '2025-06-10 18:00:00', '2025-06-10 20:00:00', '2025-06-10', '2025-06-10', 7, 1),
-    (9, 'Del grano a la barra, generando sonrisas a traves del chocolate', '2025-06-10 09:00:00', '2025-06-10 11:00:00', '2025-06-10', '2025-06-10', 5, 1),
-    (10, 'Administracion de operaciones en el deporte de alto rendimiento', '2025-06-10 11:00:00', '2025-06-10 13:00:00', '2025-06-10', '2025-06-10', 5, 1),
-    (11, 'El Ministerio del Futuro', '2025-06-13 09:00:00', '2025-06-13 11:00:00', '2025-06-13', '2025-06-13', 6, 1);
+    (1, 'Semana academica', '09:00:00', '20:00:00', '2025-06-09', '2025-06-13', 8, NULL, 1),
+    (2, 'Beneficiario controlador', '09:40:00', '11:00:00', '2025-06-09', '2025-06-09', 5, 1, 2),
+    (3, 'La sustentabilidad en una empresa de produccion', '11:00:00', '13:00:00', '2025-06-09', '2025-06-09', 5, 1, 3),
+    (4, 'Optimizacion de Costos con implantacion de la Filosofia Kaizen', '09:00:00', '11:00:00', '2025-06-09', '2025-06-09', 2, 1, 4),
+    (5, 'Violencia y poder en el mundo de los negocios', '16:00:00', '18:00:00', '2025-06-09', '2025-06-09', 2, 1, 5),
+    (6, 'El talento humano en la organizacion ante los retos de la Inteligencia Artificial', '09:00:00', '11:00:00', '2025-06-10', '2025-06-10', 2, 1, 6),
+    (7, 'El CFDI como eje de la fiscalizacion del SAT', '11:00:00', '13:00:00', '2025-06-10', '2025-06-10', 7, 1, 7),
+    (8, 'Normas Internacionales de Gestion de Calidad', '18:00:00', '20:00:00', '2025-06-10', '2025-06-10', 7, 1, 8),
+    (9, 'Del grano a la barra, generando sonrisas a traves del chocolate', '09:00:00', '11:00:00', '2025-06-10', '2025-06-10', 5, 1, 9),
+    (10, 'Administracion de operaciones en el deporte de alto rendimiento', '11:00:00', '13:00:00', '2025-06-10', '2025-06-10', 5, 1, 14),
+    (11, 'El Ministerio del Futuro', '09:00:00', '11:00:00', '2025-06-13', '2025-06-13', 6, 1, 15);
 
 INSERT INTO eventoxrecurso
 VALUES
@@ -362,19 +354,6 @@ VALUES
     (10, 9),
     (11, 5),
     (11, 10);
-
-INSERT INTO eventoxusuario
-VALUES
-    (2, 2),
-    (3, 3),
-    (4, 4),
-    (5, 5),
-    (6, 6),
-    (7, 7),
-    (8, 8),
-    (9, 9),
-    (10, 14),
-    (11, 15);
 
 INSERT INTO eventoxrecinto
 VALUES
@@ -439,9 +418,3 @@ VALUES
     (46, 'https://www.fca.unam.mx/imagenes/arturo_elizundia_charles/foto2.jpg', 12),
     (47, 'https://www.fca.unam.mx/imagenes/arturo_elizundia_charles/foto3.jpg', 12),
     (48, 'https://www.fca.unam.mx/imagenes/arturo_elizundia_charles/foto4.jpg', 12);
-
-
-
-
-
-

@@ -2,8 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 3rem;
   margin-bottom: 1.5rem;
+    background-color: #94B73C;
+    padding: 25px;
 }
 
 .filter-input {
@@ -22,20 +24,42 @@
 }
 
 .filter-btn {
-  background-color: #8dc63f;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
   border: none;
-  padding: 0.6rem 1.2rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .download-btn {
-  background-color: #dce775;
+  background-color: #ffffff;
   border: none;
-  padding: 0.6rem 1.2rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-btn {
+    background-color: #ffffff;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-btn svg {
+    color: #94B73C;
 }

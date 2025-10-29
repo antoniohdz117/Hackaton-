@@ -3,7 +3,7 @@ import React from "react";
 const Sidebar = () => {
   return (
     <aside className="sidebar">
-      <p>Menú lateral ...</p>
+      <p>Menú lateral (en construcción)</p>
     </aside>
   );
 };

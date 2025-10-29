@@ -1,15 +1,14 @@
 import React from "react";
-import Layout from "../../components/admin/Layout.jsx";
+import Layout from "../../components/academic/Layout.jsx";
 import FilterBar from "../../components/academic/FilterBar.jsx";
-import ReservationTable from "../../components/admin/ReservationTable.jsx";
+import ReservationTable from "../../components/academic/ReservationTable.jsx";
 import "../../styles/DashboardPage.css";
 
-const DashboardPage = () => {
+const DashboardPageAcademic = () => {
   return (
     <Layout>
       <div className="dashboard-container">
-
-        {/* Barra de filtros */}
+          {/* Barra de filtros */}
         <FilterBar />
 
         {/* Tabla de solicitudes */}
@@ -19,4 +18,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default DashboardPageAcademic;
