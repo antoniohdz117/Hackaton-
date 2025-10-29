@@ -8,6 +8,7 @@ import { useAuth } from "../context/AuthContext";
 import LoginPage from "../pages/auth/LoginPage";
 import DashboardPage from "../pages/admin/DashboardPage";
 import DashboardPageAcademic from "../pages/academic/DashboardPage";
+import RegisterReservations from "../pages/academic/RegisterReservations.jsx";
 import ProtectedRoute from "../components/ProtectedRoute";
 
 
@@ -27,7 +28,11 @@ const AppRoutes = () => {
       {/*funcionario */}
       <Route path="/academic/dashboard" element={<DashboardPageAcademic />} />
 
-      {/*user */}      
+        {/*Registro de reservaciones por el funcionario */}
+        <Route path="/academic/reservations" element={<RegisterReservations />} />
+
+
+        {/*user */}
       <Route path="/user/dashboard" element={<DashboardPage />} />
 
       {/* Redirección por defetco   */}
