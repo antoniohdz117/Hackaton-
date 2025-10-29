@@ -7,6 +7,7 @@ import { useAuth } from "../context/AuthContext";
 //RUTAS DE LA PLATAFORMA WEEB
 import LoginPage from "../pages/auth/LoginPage";
 import DashboardPage from "../pages/admin/DashboardPage";
+import DashboardPageAcademic from "../pages/academic/DashboardPage";
 import ProtectedRoute from "../components/ProtectedRoute";
 
 
@@ -23,8 +24,8 @@ const AppRoutes = () => {
       {/*administrador */}      
       <Route path="/admin/dashboard" element={<DashboardPage />} />
 
-      {/*administrador */}      
-      <Route path="/solicitante/dashboard" element={<DashboardPage />} />
+      {/*funcionario */}
+      <Route path="/academic/dashboard" element={<DashboardPageAcademic />} />
 
       {/*user */}      
       <Route path="/user/dashboard" element={<DashboardPage />} />

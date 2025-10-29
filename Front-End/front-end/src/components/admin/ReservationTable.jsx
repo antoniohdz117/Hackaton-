@@ -1,5 +1,9 @@
 import React from "react";
-import "../styles/ReservationTable.css";
+import "../../styles/ReservationTable.css";
+import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import DoneOutlinedIcon from '@mui/icons-material/DoneOutlined';
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import {IconButton} from "@mui/material";
 
 
 //DATOS DE PRUEBA
@@ -60,6 +64,7 @@ const ReservationTable = () => {
             <th>Hora fin</th>
             <th>Estatus</th>
             <th>Opciones</th>
+              <th>Descarga</th>
           </tr>
         </thead>
         <tbody>
@@ -79,9 +84,19 @@ const ReservationTable = () => {
                 </span>
               </td>
               <td>
-                <button className="btn-accept">✔</button>
-                <button className="btn-decline">✖</button>
+                  <IconButton className="btn-accept">
+                      <DoneOutlinedIcon/>
+                  </IconButton>
+
+                    <IconButton className="btn-decline">
+                        <CloseOutlinedIcon/>
+                    </IconButton>
               </td>
+                <td>
+                    <IconButton className="btn-download">
+                        <FileDownloadOutlinedIcon />
+                    </IconButton>
+                </td>
             </tr>
           ))}
         </tbody>

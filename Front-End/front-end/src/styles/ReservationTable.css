@@ -44,18 +44,23 @@
   color: #fbc02d;
 }
 
-.btn-accept,
-.btn-decline {
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 1rem;
+
+.btn-accept svg{
+  color: #94B73C;
 }
 
-.btn-accept {
-  color: #2e7d32;
+.btn-decline svg{
+  color: #E85E4D;
 }
 
-.btn-decline {
-  color: #b71c1c;
+.btn-edit svg {
+  color: #94B73C;
+}
+
+.btn-delete svg {
+    color: #E85E4D;
+}
+
+.btn-download svg{
+    color: #000000;
 }
