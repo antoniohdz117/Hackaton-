@@ -1,60 +1,59 @@
 .table-container {
-  overflow-x: auto;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .reservation-table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .reservation-table th,
 .reservation-table td {
-  text-align: center;
-  padding: 0.75rem;
-  border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .reservation-table th {
-  background-color: #f1f8e9;
-  color: #333;
-  font-weight: 600;
+    background-color: #f1f8e9;
+    color: #333;
+    font-weight: 600;
 }
 
 .status {
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  font-weight: bold;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-weight: bold;
 }
 
 .status.aceptada {
-  background-color: #c8e6c9;
-  color: #2e7d32;
+    background-color: #c8e6c9;
+    color: #2e7d32;
 }
 
 .status.rechazada {
-  background-color: #ffcdd2;
-  color: #b71c1c;
+    background-color: #ffcdd2;
+    color: #b71c1c;
 }
 
 .status.pendiente {
-  background-color: #fff9c4;
-  color: #fbc02d;
+    background-color: #fff9c4;
+    color: #fbc02d;
 }
 
-
 .btn-accept svg{
-  color: #94B73C;
+    color: #94B73C;
 }
 
 .btn-decline svg{
-  color: #E85E4D;
+    color: #E85E4D;
 }
 
 .btn-edit svg {
-  color: #94B73C;
+    color: #94B73C;
 }
 
 .btn-delete svg {
