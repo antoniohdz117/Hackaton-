@@ -1,11 +1,13 @@
 import React from "react";
-import logoUnam from "../assets/logos/LogoUNAM.png";
-import logoFca from "../assets/logos/LogoFCA_Negro.png";
+import logoUnam from "../../assets/logos/LogoUNAM.png";
+import logoFca from "../../assets/logos/LogoFCA_Negro.png";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import "../styles/Navbar.css";
+import PersonAddSharpIcon from '@mui/icons-material/PersonAddSharp';
+import "../../styles/Navbar.css";
 import { IconButton } from "@mui/material";
+
 
 const NavBar = () => {
     return (
@@ -23,6 +25,10 @@ const NavBar = () => {
                 <button className="home-btn">
                     <HomeOutlinedIcon/>
                     Inicio
+                </button>
+                <button className="person-btn">
+                    <PersonAddSharpIcon/>
+                    Usuarios
                 </button>
                 <button className="notification-btn">
                     <NotificationsNoneOutlinedIcon/>
