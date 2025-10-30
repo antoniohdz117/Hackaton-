@@ -1,13 +1,10 @@
-// ConfirmationModal.jsx
 import React from 'react';
 import { Dialog, DialogContent, DialogActions, Button, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const ConfirmationModal = ({ isOpen, reservation, onConfirm, onCancel }) => {
-    // Si la reservación es null o no está abierto, no renderizar
     if (!isOpen || !reservation) return null;
 
-    // Generar el texto del título dinámicamente
     const title = `¿Está seguro de aceptar la solicitud de "${reservation.evento}" (${reservation.recinto})?`;
 
     return (
@@ -26,7 +23,7 @@ const ConfirmationModal = ({ isOpen, reservation, onConfirm, onCancel }) => {
                     paddingTop: '0px'
                 }}
             >
-                {/* Icono de check verde */}
+
                 <CheckCircleIcon
                     sx={{
                         color: '#4CAF50',
@@ -38,7 +35,6 @@ const ConfirmationModal = ({ isOpen, reservation, onConfirm, onCancel }) => {
                     }}
                 />
 
-                {/* Título de la confirmación */}
                 <Typography
                     variant="h5"
                     component="h2"
@@ -49,14 +45,12 @@ const ConfirmationModal = ({ isOpen, reservation, onConfirm, onCancel }) => {
                     {title}
                 </Typography>
 
-                {/* Mensaje de acción irreversible */}
                 <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 3 }}>
                     Esta acción es irreversible
                 </Typography>
 
             </DialogContent>
 
-            {/* Botones de acción */}
             <DialogActions sx={{ padding: '0 24px 0 0' }}>
                 <Button
                     onClick={onCancel}
@@ -65,10 +59,10 @@ const ConfirmationModal = ({ isOpen, reservation, onConfirm, onCancel }) => {
                     Cancel
                 </Button>
                 <Button
-                    onClick={() => onConfirm(reservation.id)} // Llama a la función de confirmar con el ID
+                    onClick={() => onConfirm(reservation.id)}
                     variant="contained"
                     sx={{
-                        backgroundColor: '#8BC34A', // Verde olivo
+                        backgroundColor: '#8BC34A',
                         '&:hover': { backgroundColor: '#7CB342' }
                     }}
                     autoFocus

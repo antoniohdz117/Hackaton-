@@ -1,16 +1,15 @@
-// ReservationTable.jsx
-
 import React, { useState } from "react";
-import ConfirmationModal from "./ConfirmationModal"; // Asegúrate de que esta ruta sea correcta
+import ConfirmationModal from "./ConfirmationModal";
+import RejectionModal from "./RejectionModal";
 import "../../styles/ReservationTable.css";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import DoneOutlinedIcon from '@mui/icons-material/DoneOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-import {IconButton} from "@mui/material";
+import { IconButton } from "@mui/material";
 
 
 // DATOS DE PRUEBA
-const initialReservations = [ // Cambié el nombre a initialReservations
+const initialReservations = [
   {
     id: 1,
     recinto: "Frontón Cerrado",
@@ -48,41 +47,56 @@ const initialReservations = [ // Cambié el nombre a initialReservations
 
 
 const ReservationTable = () => {
-    // Usar estado local para simular la actualización del estatus
     const [reservations, setReservations] = useState(initialReservations);
-    
-    // 1. Estado para controlar si el modal está abierto
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    
-    // 2. Estado para guardar los datos de la reservación seleccionada
+
+    const [isAcceptModalOpen, setIsAcceptModalOpen] = useState(false);
+    const [isRejectModalOpen, setIsRejectModalOpen] = useState(false);
     const [selectedReservation, setSelectedReservation] = useState(null);
 
-    // Función para abrir el modal (se llama al hacer clic en el botón verde)
-    const handleOpenModal = (reservation) => {
+
+    const handleOpenAcceptModal = (reservation) => {
         setSelectedReservation(reservation);
-        setIsModalOpen(true);
+        setIsAcceptModalOpen(true);
     };
 
-    // Función para cerrar el modal
-    const handleCloseModal = () => {
-        setIsModalOpen(false);
+    const handleCloseAcceptModal = () => {
+        setIsAcceptModalOpen(false);
         setSelectedReservation(null);
     };
 
-    // Función que se ejecuta al darle 'Aceptar' dentro del modal
     const handleConfirmAccept = (id) => {
         console.log(`Reservación ${id} ACEPTADA!`);
-        
-        // Simulación: Actualizar el estatus de la reservación en el estado local
-        setReservations(prevReservations => 
-            prevReservations.map(r => 
+
+        setReservations(prevReservations =>
+            prevReservations.map(r =>
                 r.id === id ? { ...r, estatus: 'Aceptada' } : r
             )
         );
-        
-        // Aquí iría la llamada a la API o la lógica de negocio real
-        
-        handleCloseModal(); // Cerrar el modal después de la acción
+
+        handleCloseAcceptModal();
+    };
+
+
+    const handleOpenRejectModal = (reservation) => {
+        setSelectedReservation(reservation);
+        setIsRejectModalOpen(true);
+    };
+
+    const handleCloseRejectModal = () => {
+        setIsRejectModalOpen(false);
+        setSelectedReservation(null);
+    };
+
+    const handleConfirmReject = (id, motivo) => {
+        console.log(`Reservación ${id} RECHAZADA por motivo: ${motivo}`);
+
+        setReservations(prevReservations =>
+            prevReservations.map(r =>
+                r.id === id ? { ...r, estatus: 'Rechazada' } : r
+            )
+        );
+
+        handleCloseRejectModal();
     };
 
 
@@ -121,16 +135,21 @@ const ReservationTable = () => {
                                 </span>
                             </td>
                             <td>
-                                {/* Botón ACEPTAR: Abre el modal */}
-                                <IconButton 
+
+                                <IconButton
                                     className="btn-accept"
-                                    onClick={() => handleOpenModal(r)}
+                                    onClick={() => handleOpenAcceptModal(r)}
+                                    disabled={r.estatus === 'Rechazada'}
                                 >
                                     <DoneOutlinedIcon/>
                                 </IconButton>
 
-                                {/* Botón RECHAZAR: (Actualmente no abre modal) */}
-                                <IconButton className="btn-decline">
+
+                                <IconButton
+                                    className="btn-decline"
+                                    onClick={() => handleOpenRejectModal(r)}
+                                    disabled={r.estatus === 'Rechazada'}
+                                >
                                     <CloseOutlinedIcon/>
                                 </IconButton>
                             </td>
@@ -143,13 +162,19 @@ const ReservationTable = () => {
                     ))}
                 </tbody>
             </table>
-            
-            {/* Componente Modal de Confirmación */}
+
             <ConfirmationModal
-                isOpen={isModalOpen}
+                isOpen={isAcceptModalOpen}
                 reservation={selectedReservation}
                 onConfirm={handleConfirmAccept}
-                onCancel={handleCloseModal}
+                onCancel={handleCloseAcceptModal}
+            />
+
+            <RejectionModal
+                isOpen={isRejectModalOpen}
+                reservation={selectedReservation}
+                onConfirmReject={handleConfirmReject}
+                onCancel={handleCloseRejectModal}
             />
         </div>
     );
