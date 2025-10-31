@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ConfirmationModal from "./ConfirmationModal";
 import RejectionModal from "./RejectionModal";
+import SuccessModal from "./SuccessModal";
+import RejectionNotificationModal from "./RejectionNotificationModal";
 import "../../styles/ReservationTable.css";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import DoneOutlinedIcon from '@mui/icons-material/DoneOutlined';
@@ -51,7 +53,10 @@ const ReservationTable = () => {
 
     const [isAcceptModalOpen, setIsAcceptModalOpen] = useState(false);
     const [isRejectModalOpen, setIsRejectModalOpen] = useState(false);
+    const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+    const [isRejectNotificationOpen, setIsRejectNotificationOpen] = useState(false); // NUEVO
     const [selectedReservation, setSelectedReservation] = useState(null);
+
 
 
     const handleOpenAcceptModal = (reservation) => {
@@ -61,20 +66,33 @@ const ReservationTable = () => {
 
     const handleCloseAcceptModal = () => {
         setIsAcceptModalOpen(false);
-        setSelectedReservation(null);
     };
 
     const handleConfirmAccept = (id) => {
-        console.log(`Reservación ${id} ACEPTADA!`);
+        let acceptedReservation = null;
 
         setReservations(prevReservations =>
-            prevReservations.map(r =>
-                r.id === id ? { ...r, estatus: 'Aceptada' } : r
-            )
+            prevReservations.map(r => {
+                if (r.id === id) {
+                    acceptedReservation = { ...r, estatus: 'Aceptada' };
+                    return acceptedReservation;
+                }
+                return r;
+            })
         );
 
         handleCloseAcceptModal();
+        if (acceptedReservation) {
+            setSelectedReservation(acceptedReservation);
+            setIsSuccessModalOpen(true);
+        }
     };
+
+    const handleCloseSuccessModal = () => {
+        setIsSuccessModalOpen(false);
+        setSelectedReservation(null);
+    };
+
 
 
     const handleOpenRejectModal = (reservation) => {
@@ -84,19 +102,31 @@ const ReservationTable = () => {
 
     const handleCloseRejectModal = () => {
         setIsRejectModalOpen(false);
-        setSelectedReservation(null);
     };
 
     const handleConfirmReject = (id, motivo) => {
-        console.log(`Reservación ${id} RECHAZADA por motivo: ${motivo}`);
+        let rejectedReservation = null;
 
         setReservations(prevReservations =>
-            prevReservations.map(r =>
-                r.id === id ? { ...r, estatus: 'Rechazada' } : r
-            )
+            prevReservations.map(r => {
+                if (r.id === id) {
+                    rejectedReservation = { ...r, estatus: 'Rechazada' };
+                    return rejectedReservation;
+                }
+                return r;
+            })
         );
 
         handleCloseRejectModal();
+        if (rejectedReservation) {
+            setSelectedReservation(rejectedReservation);
+            setIsRejectNotificationOpen(true);
+        }
+    };
+
+    const handleCloseRejectNotification = () => {
+        setIsRejectNotificationOpen(false);
+        setSelectedReservation(null);
     };
 
 
@@ -135,7 +165,6 @@ const ReservationTable = () => {
                                 </span>
                             </td>
                             <td>
-
                                 <IconButton
                                     className="btn-accept"
                                     onClick={() => handleOpenAcceptModal(r)}
@@ -143,7 +172,6 @@ const ReservationTable = () => {
                                 >
                                     <DoneOutlinedIcon/>
                                 </IconButton>
-
 
                                 <IconButton
                                     className="btn-decline"
@@ -170,11 +198,23 @@ const ReservationTable = () => {
                 onCancel={handleCloseAcceptModal}
             />
 
+            <SuccessModal
+                isOpen={isSuccessModalOpen}
+                reservation={selectedReservation}
+                onClose={handleCloseSuccessModal}
+            />
+
             <RejectionModal
                 isOpen={isRejectModalOpen}
                 reservation={selectedReservation}
                 onConfirmReject={handleConfirmReject}
                 onCancel={handleCloseRejectModal}
+            />
+
+            <RejectionNotificationModal
+                isOpen={isRejectNotificationOpen}
+                reservation={selectedReservation}
+                onClose={handleCloseRejectNotification}
             />
         </div>
     );
