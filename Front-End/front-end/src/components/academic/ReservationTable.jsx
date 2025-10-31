@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CancellationModal from "./CancellationModal";
+import CancellationNotificationModal from "./CancellationNotificationModal";
 import "../../styles/ReservationTable.css";
 import { IconButton } from "@mui/material";
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
@@ -43,9 +44,9 @@ const initialReservations = [
 
 const ReservationTable = () => {
     const [reservations, setReservations] = useState(initialReservations);
-    
+
     const [isCancelModalOpen, setIsCancelModalOpen] = useState(false);
-    
+    const [isCancelNotificationOpen, setIsCancelNotificationOpen] = useState(false);
     const [selectedReservation, setSelectedReservation] = useState(null);
 
 
@@ -57,20 +58,27 @@ const ReservationTable = () => {
 
     const handleCloseCancelModal = () => {
         setIsCancelModalOpen(false);
-        setSelectedReservation(null);
     };
 
     const handleConfirmCancel = (id) => {
         console.log(`Reservación ${id} CANCELADA y ELIMINADA!`);
-        
+
         setReservations(prevReservations =>
             prevReservations.filter(r => r.id !== id)
         );
-        
-        handleCloseCancelModal(); 
+
+        handleCloseCancelModal();
+
+        setIsCancelNotificationOpen(true);
     };
 
-    // TABLA QEUE MUESTRA LAS RESERVACIONES DE LOS FUNCIONARIOS
+
+    const handleCloseCancelNotification = () => {
+        setIsCancelNotificationOpen(false);
+        setSelectedReservation(null);
+    };
+
+
     return (
         <div className="table-container">
             <table className="reservation-table">
@@ -124,6 +132,11 @@ const ReservationTable = () => {
                 reservation={selectedReservation}
                 onConfirmCancel={handleConfirmCancel}
                 onCancel={handleCloseCancelModal}
+            />
+
+            <CancellationNotificationModal
+                isOpen={isCancelNotificationOpen}
+                onClose={handleCloseCancelNotification}
             />
         </div>
     );
