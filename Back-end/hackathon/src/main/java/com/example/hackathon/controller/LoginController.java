@@ -24,36 +24,30 @@ public class LoginController {
 
 
 
-    /*
-    @PostMapping("/login")
-    public String login(@RequestBody LoginRequest request) {
-        boolean ok = loginService.validarCredenciales(request.rfc, request.contrasenia);
-        return ok ? "ok" : "error";
-
-    }
-
-     */
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(
+    public ResponseEntity<?> login(
             @Valid @RequestBody LoginRequest request,
             BindingResult result) {
 
-        // 🧩 Validación de campos vacíos
+
         if (result.hasErrors()) {
             String mensaje = result.getAllErrors().get(0).getDefaultMessage();
-            return ResponseEntity.badRequest().body(new LoginResponse(false, mensaje));
+            return ResponseEntity.badRequest().body(mensaje);
         }
 
-        // 🧩 Validación en base de datos
-        boolean ok = loginService.validarCredenciales(request.getRfc(), request.getContrasenia());
+        LoginResponse response = loginService.login(request);
 
-        if (ok) {
-            //Se deben regresar los campos de los datos del usuario autenficado
-            return ResponseEntity.ok(new LoginResponse(true, "Login exitoso"));
-        } else {
-            return ResponseEntity.status(401).body(new LoginResponse(false, "Credenciales inválidas"));
+        //manda el error
+        if (response == null) {
+            return ResponseEntity.status(401)
+                    .body("{\"mensaje\": " +
+                            "\"Credenciales inválidas\"" +
+                            "}");
         }
+
+
+        return ResponseEntity.ok(response);
+        }
+
     }
-
-}

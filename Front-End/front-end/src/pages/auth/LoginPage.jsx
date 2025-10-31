@@ -9,6 +9,7 @@ import {
   FormControlLabel,
 } from "@mui/material";
 
+import { useNavigate } from "react-router-dom";
 
 //importar imagen de visibilidad
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -30,6 +31,64 @@ import { useState } from "react";
 //import authService from "../../api/authService";
 
 const LoginPage = () => {
+
+  //ESTADO PARA EL FORMULARIO
+
+  const navigate = useNavigate();
+  const [rfc, setRfc] = useState("");
+  const [contrasenia, setContrasenia] = useState("");
+  //ESTADO PARA MOSTRAR Y OCULTAR CONTRASEÑA y de carga
+  const [mostrarContrasenia, setMostrarContrasenia] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  //importar la funcion de login
+
+
+  //Mandar credenciales
+  const login = async (data) => {
+    const response = await axios.post("http://localhost:8080/api/auth/login", data);
+    return response.data;
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    //llamar al servicio de autentificacion
+    try {
+      const response = await login({rfc, contrasenia});
+
+      //Mensaje de exito //borrrar despues
+      console.log("Login exitoso", response);
+
+      //guardar el usuario en el localStorage
+      localStorage.setItem("usuario", JSON.stringify(response));
+
+
+      
+      //alert
+      //CONDICIONAL SEGUN EL ROL DEL USUARIO
+      if (response.idrol === 1) {
+        navigate("/admin/dashboard");
+        return;
+      } else if (response.idrol === 2) {
+        navigate("/docente/dashboard");
+        return;
+      } else {
+        navigate("/alumno/dashboard");
+        return;
+      }
+
+
+
+    } catch (error) {
+      console.error("Error en el login", error);
+      alert("Error en el login: " + error.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+
   return (
     <Box sx={{ display: "flex", height: "100vh", overflow: "hidden" }}>
       {/*  Imagen izquierda  */}
@@ -118,15 +177,31 @@ const LoginPage = () => {
               variant="outlined"
               fullWidth
               sx={{ mb: 2 }}
+              value={rfc}
+              onChange={(e) => setRfc(e.target.value)}
             />
             <TextField
               label="Contraseña"
-              type="password"
+              type={mostrarContrasenia ? "text" : "password"}
               variant="outlined"
               fullWidth
               sx={{ mb: 1 }}
-              //agregar icono de visibilidad
-              
+              value={contrasenia}
+              onChange={(e) => setContrasenia(e.target.value)}
+              InputProps={{
+                endAdornment: (
+                  <Box
+                    sx={{ cursor: "pointer" }}
+                    onClick={() => setMostrarContrasenia(!mostrarContrasenia)}
+                  >
+                    {mostrarContrasenia ? (
+                      <VisibilityOffIcon color="action" />
+                    ) : (
+                      <VisibilityIcon color="action" />
+                    )}
+                  </Box>
+                ),
+              }}
             />
 
             {/* Opciones */}
@@ -156,13 +231,15 @@ const LoginPage = () => {
                   "&:hover": { textDecoration: "underline" },
                 }}
               >
-                Olvidé contraseña
+                Olvide contraseña
               </Typography>
             </Box>
 
             <Button
-              variant="contained"
+              variant="outlined"
               fullWidth
+              onClick={handleLogin}
+              disabled={loading}
               sx={{
                 backgroundColor: "#8dc63f",
                 color: "white",
@@ -174,7 +251,7 @@ const LoginPage = () => {
                 },
               }}
             >
-              Acceder
+              {loading ? "Cargando..." : "Acceder"}
             </Button>
           </Box>
         </Paper>
@@ -184,3 +261,5 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+

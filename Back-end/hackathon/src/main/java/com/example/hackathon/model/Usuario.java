@@ -21,7 +21,7 @@ public class Usuario {
 
     @ManyToOne
     @JoinColumn(name ="idrol",nullable = false)
-    private Rol idrol;
+    private Rol rol;
 
     public int getIdusuario() {
         return idusuario;
@@ -87,11 +87,11 @@ public class Usuario {
         this.contrasenia = contrasenia;
     }
 
-    public Rol getIdrol() {
-        return idrol;
+    public Rol getRol() {
+        return rol;
     }
 
-    public void setIdrol(Rol idrol) {
-        this.idrol = idrol;
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 }

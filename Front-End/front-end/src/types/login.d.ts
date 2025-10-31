@@ -8,11 +8,12 @@ export interface Login {
 export interface LoginResponse {
   
   //token: string; Todavía no se implementa o no se necesita
-  iduser: number;
-  nombre: string;
-  paterno: string;
-  materno: string;
-  correo: string;
-  telefono: string;
-
+  idusuario: number,
+  nombre: string,
+  paterno:string,
+  materno:string,
+  numerofijo:string,
+  numerocelular:string,
+  correo: string,
+  idrol:number
 }
