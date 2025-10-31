@@ -25,16 +25,13 @@ const AppRoutes = () => {
       {/*administrador */}      
       <Route path="/admin/dashboard" element={<DashboardPage />} />
 
-      {/*funcionario */}
-      <Route path="/academic/dashboard" element={<DashboardPageAcademic />} />
+      {/*Registro de reservaciones por el funcionario */}
+      <Route path="/academic/reservations" element={<RegisterReservations />} />
 
-        {/*Registro de reservaciones por el funcionario */}
-        <Route path="/academic/reservations" element={<RegisterReservations />} />
-
-
-        {/*user */}
+        {/*usuario de servicio */}
+        {/* DEFINIR RUTAS TODAVIA
       <Route path="/user/dashboard" element={<DashboardPage />} />
-
+*/}
       {/* Redirección por defetco   */}
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>

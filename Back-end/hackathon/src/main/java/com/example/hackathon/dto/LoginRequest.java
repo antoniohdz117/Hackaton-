@@ -11,18 +11,22 @@ public class LoginRequest {
     private String contrasenia;
 
     public String getRfc() {
+
         return rfc;
     }
 
     public void setRfc(String rfc) {
+
         this.rfc = rfc;
     }
 
     public String getContrasenia() {
+
         return contrasenia;
     }
 
     public void setContrasenia(String contrasenia) {
+
         this.contrasenia = contrasenia;
     }
 

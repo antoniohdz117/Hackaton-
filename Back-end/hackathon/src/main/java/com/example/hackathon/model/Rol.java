@@ -8,10 +8,25 @@ public class Rol {
 
     @Id
     @Column (name = "idrol", nullable = false)
-    private Long idrol;
+    private int idrol;
 
     @Column(length = 20, nullable = false)
-    private String rol;
+    private String nombre;
 
 
+    public int getIdrol() {
+        return idrol;
+    }
+
+    public void setIdrol(int idrol) {
+        this.idrol = idrol;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }
